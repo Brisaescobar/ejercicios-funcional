@@ -1,3 +1,4 @@
+-- https://docs.google.com/document/d/1fIdfbyhyio8K2Wx9GaEZZ5cjU8P1rY8ZzdO2p4SP4OE/edit?tab=t.0
 import Text.Show.Functions
 import Data.List
 import Text.Read.Lex (Number)
