@@ -1,5 +1,6 @@
 import Text.Show.Functions
 import Data.List
+import GHC.Base (BCO)
 
 data Persona = Persona { 
     estres :: Int, 
@@ -44,4 +45,29 @@ lasToninas conPlata unaPersona
 puertoMadryn :: PlanTuristico 
 puertoMadryn unaPersona = unaPersona {amigos = amigos unaPersona + 1}
 
--- falta 
+--laAdela :: PlanTuristico
+--laAdela = 
+
+-- a -- 
+esPiola :: Persona -> [PlanTuristico] -> Bool 
+esPiola unaPersona = any ((< estres unaPersona). estres . ($ unaPersona))
+
+-- b -- 
+ana :: Persona 
+ana = Persona 100  "Ana" ["Mar", "Gastronomia"] 3 
+
+planTuristicoAna :: [PlanTuristico]
+planTuristicoAna = [villaGesell "Enero" , lasToninas True, puertoMadryn]
+
+resultadoAna :: Bool
+resultadoAna = esPiola ana planTuristicoAna
+
+-- c -- 
+pedro :: Persona
+pedro = Persona 20 "Luis" ["Montaña"] 5 
+
+planTuristicoPedro :: [PlanTuristico]
+planTuristicoPedro = [villaGesell "Febrero" , lasToninas False, puertoMadryn]
+
+resultadoPedro :: Bool
+resultadoPedro = esPiola pedro planTuristicoPedro
