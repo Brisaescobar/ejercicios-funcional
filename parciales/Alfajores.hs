@@ -117,7 +117,7 @@ criteriosSegunEmi :: Criterio
 criteriosSegunEmi = soloMarca "Capitan del Espacio"   
 
 soloMarca :: String -> Criterio 
-soloMarca unaMarca = isInfixOf unaMarca .nombre 
+soloMarca unaMarca = isInfixOf unaMarca . nombre 
 
 -- TOMI --
 criteriosSegunTomi :: Criterio 
@@ -171,3 +171,4 @@ agregarAlfajor unAlfajor unCliente = unCliente {alfajores = unAlfajor : alfajore
 -- d -- 
 comprarUnaLista :: [Alfajor] -> Cliente -> Cliente
 comprarUnaLista alfajores unCliente = foldl (flip comprarAlfajor) unCliente (leGustanAlfajores unCliente alfajores)
+
