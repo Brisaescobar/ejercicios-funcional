@@ -23,7 +23,6 @@ esContingenteRaro = all (even . amigos)
 -- Punto 2 --
 type PlanTuristico = Persona -> Persona 
 
-
 villaGesell :: String -> PlanTuristico
 villaGesell unMes unaPersona
     | unMes == "Enero" || unMes == "Febrero"  = aumentarEstres 10 unaPersona
